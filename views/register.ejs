@@ -1,0 +1,40 @@
+<%- include("partials/header") %>
+
+<section id="loginRegister">
+  <div class="sidenav">
+    <div class="login-main-text">
+      <h2>
+        Collection Of Links<br />
+        Register Page
+      </h2>
+    </div>
+  </div>
+  <div class="main">
+    <div class="col-md-6 col-sm-12">
+      <div class="login-form">
+        <form action="/register" method="POST">
+          <div class="form-group">
+            <label>User Name</label>
+            <input type="text" class="form-control" placeholder="User Name" name="username" />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="password" />
+          </div>
+          <div class="form-group">
+            <label>Invitation Code</label>
+            <input type="text" class="form-control" placeholder="Invitation Code" name="InvitationCode" />
+          </div>
+          <button type="submit" class="btn btn-lg btn-black btn-block">
+            SignUp
+          </button>
+          <div class="login-signup">
+            <p>Already have an account?<a href="/register"> Log In here!</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer");%>

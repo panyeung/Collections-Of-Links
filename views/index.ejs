@@ -1,0 +1,54 @@
+<%- include("partials/header") %>
+
+<!-- introduction -->
+<section id="intro">
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <div class="container">
+                <h1>
+                    Welcome to Collection Of Links
+                </h1>
+                <p>View different interesting links and resources</p>
+                <a href="/links/new" class="btn btn-black">Adding New Link</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- links display Section -->
+<section id="links-display">
+    <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+            <% links.forEach(function(link) { %>
+            <% if(currentUser && link.author.id.equals(currentUser._id)){ %>
+            <div class="col mb-4 d-flex align-items-stretch">
+                <div class="card">
+                    <a href="<%=link.url_link %>" class="card-img-top card-image" alt="<%=link.name%>"
+                        target="_blank"><img src="<%= link.image %> " class="card-img-top card-image" alt="..."></a>
+                    <div class="card-body">
+                        <h5 class="card-title"><%=link.name%></h5>
+                        <p class="card-text">
+                            <a href="/links/<%=link._id %> " class="btn btn-primary">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <%}%>
+            <%});%>
+        </div>
+    </div>
+</section>
+
+<!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+    <div class="col mb-4">
+        <div class="card">
+            <img src="https://dummyimage.com/600x400/000/fff.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+            </div>
+        </div>
+    </div>
+</div> -->
+<%- include("partials/footer") %>
